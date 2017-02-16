@@ -3,7 +3,9 @@ FROM ubuntu/node:latest
 
 MAINTAINER dengchao2056@126.com
 
-RUN npm install -g vue-cli webpack
+# 所有的 npm 操作都需要先执行 . "$HOME/.tnvm/tnvm.sh"，使 tnvm 生效
+RUN  . "$HOME/.tnvm/tnvm.sh" && \
+    npm install -g vue-cli webpack
 
 RUN mkdir /data
 
