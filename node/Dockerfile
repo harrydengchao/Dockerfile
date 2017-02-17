@@ -16,16 +16,15 @@ RUN apt-get install -y wget git npm
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # 安装node包管理器 n，用于获取 node LTS版本、stable版本
-RUN npm install -g n
+RUN npm install -g n && n lts
 
 # 安装node包管理器 tnvm，加速下载
-# 所有的 npm 操作都需要先执行 . "$HOME/.tnvm/tnvm.sh"，使 tnvm 生效
+# 使用 tnvm时，所有的 npm 操作都需要先执行 . "$HOME/.tnvm/tnvm.sh"，使 tnvm 生效
 RUN wget --no-check-certificate -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash && \
     export METHOD=script && \
     . "$HOME/.tnvm/tnvm.sh" && \
-    tnvm install "node-v$(n --lts)" && \
-    tnvm install "node-v$(n --stable)" && \
-    tnvm use "node-v$(n --lts)"
+    tnvm install "node-v$(n --lts)"
+# RUN . "$HOME/.tnvm/tnvm.sh" && tnvm use "node-v$(n --lts)"
 
 EXPOSE 80 8080 8090
 
