@@ -3,8 +3,7 @@ FROM ubuntu/node:latest
 
 MAINTAINER dengchao2056@126.com
 
-RUN  npm install -g cnpm && \
-    cnpm install -g weex-toolkit@beta
+RUN  npm install -g weex-toolkit
 
 RUN mkdir /data
 

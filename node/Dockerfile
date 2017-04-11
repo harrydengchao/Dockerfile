@@ -9,7 +9,7 @@ MAINTAINER dengchao2056@126.com
 RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
     apt-get update
 
-RUN apt-get install -y wget git npm
+RUN apt-get install -y wget git npm inetutils-ping net-tools
 
 # 安装node包管理器 n，用于获取 node LTS版本、stable版本
 RUN npm install -g n && n lts
