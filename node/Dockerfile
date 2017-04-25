@@ -6,7 +6,7 @@ FROM ubuntu:16.04
 
 MAINTAINER dengchao2056@126.com
 
-RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
+RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && \
     apt-get update
 
 RUN apt-get install -y wget git npm inetutils-ping net-tools
@@ -14,6 +14,6 @@ RUN apt-get install -y wget git npm inetutils-ping net-tools
 # 安装node包管理器 n，用于获取 node LTS版本、stable版本
 RUN npm install -g n && n lts
 
-EXPOSE 80 8080 8090
+EXPOSE 80 8080 27017
 
 CMD ["/bin/bash"]
