@@ -15,8 +15,8 @@ RUN apt-get install -y wget git npm inetutils-ping net-tools zip
 RUN npm install -g n && n lts
 
 # 制造一个使用淘宝源的npm 
-RUN echo alias tnpm='npm --registry=https://registry.npm.taobao.org' >> ~/.bashrc && source ~/.bashrc
+RUN echo alias tnpm='npm --registry=https://registry.npm.taobao.org' >> ~/.bashrc && /bin/bash -c "source ~/.bashrc"
 
 EXPOSE 80 8080 27017
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]

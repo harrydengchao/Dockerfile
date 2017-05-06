@@ -10,7 +10,7 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && 
 RUN apt-get install -y wget git python3 inetutils-ping net-tools
 
 # 更换 pip 为国内原
-RUN mkdir ~/.pip && touch pip.conf && echo [global] >> test.conf && echo index-url = https://pypi.mirrors.ustc.edu.cn/simple >> test.conf
+RUN mkdir ~/.pip && touch pip.conf && echo [global] >> pip.conf && echo index-url = https://pypi.mirrors.ustc.edu.cn/simple >> pip.conf
 
 EXPOSE 80 8080 27017 3000
 
