@@ -2,7 +2,6 @@
 # node 版本管理器 n -- https://github.com/tj/n
 
 FROM ubuntu:16.04
-# build to ubuntu/node:latest
 
 MAINTAINER dengchao2056@126.com
 
