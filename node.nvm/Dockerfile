@@ -27,6 +27,6 @@ RUN echo 'NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node' >> ~/.bashrc
 # 制造一个使用淘宝源的 tnpm 
 RUN echo alias tnpm="'npm --registry=https://registry.npm.taobao.org'" >> ~/.bashrc && /bin/bash -c "source ~/.bashrc"
 
-EXPOSE 80 8080 27017 3306 
+EXPOSE 80 8080 27017 3306
 
 CMD ["/bin/bash"]
